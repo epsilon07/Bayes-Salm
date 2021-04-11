@@ -113,12 +113,12 @@ salm <- function(nchain, init.abg,init.lambda, init.tau,
 
 
 nchain = 11000
-init.abg = c(2, 0, 0.001) # On ne touche plus a ça quoi qu'il arrive !!!!!!!!!
+init.abg = c(2, 0, 0.001) # On ne touche plus a Ã§a quoi qu'il arrive !!!!!!!!!
 init.lambda = matrix(0, 6, 3)
 init.tau = 4
 
 prop.sd.abg = c(0.09, 0.01, 0.0001)
-prop.sd.lambda = 0.2 # ça c'est pas mal on laisse !
+prop.sd.lambda = 0.2 # Ã§a c'est pas mal on laisse !
 
 test = salm(nchain, init.abg, init.lambda, init.tau, prop.sd.abg, prop.sd.lambda)
 par(mfrow = c(1,3))
@@ -154,7 +154,7 @@ for (i in (1:2)){
   }
 }
 
-## densité
+## densitÃ©
 # alpha, beta et gamma
 par(mfrow = c(1, 3))
 for (i in (1:3)){
@@ -173,7 +173,7 @@ for (i in (1:2)){
 par(mfrow = c(1, 1))
 plot(density(out$chain.tau), main = "")
 
-## Adéquation du modèle
+## AdÃ©quation du modÃ¨le
 # simulation
 simu <- matrix(NA, nrow(out$chain.abg), 6)
 proba <- matrix(NA, 6, 3)
@@ -238,7 +238,6 @@ lines(dosage, apply(proba_pl3, 2, quantile, prob = 0.025), lty = 2,
       col = "grey")
 lines(dosage, apply(proba_pl3, 2, quantile, prob = 0.975), lty = 2,
       col = "grey")
-# Très moche
 
 
 
